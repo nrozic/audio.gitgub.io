@@ -16,7 +16,7 @@
     </style>
   </head>
   <body>
-    <audio controls crossorigin="true">
+    <video onload="init()" controls crossorigin="true">
       <!-- <source src="audio.ogg" type="audio/ogg" /> -->
       <source class="video" src="audio.mp3" type="audio/mpeg" />
       <track
@@ -27,16 +27,18 @@
         default
       />
       Your browser does not support the audio element.
-    </audio>
+    </video>
 
     <script>
-      var video = document.querySelector('video');
+      function init() {
+        var video = document.querySelector('video');
 
-      video.addEventListener('load', function () {
-        var tracks = video.textTracks[0];
-        tracks.mode = 'showing';
-        console.log('Done');
-      });
+        video.addEventListener('load', function () {
+          var tracks = video.textTracks[0];
+          tracks.mode = 'showing';
+          console.log('Done');
+        });
+      }
     </script>
   </body>
 </html>
