@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Audio with subtitles test</title>
+    <style>
+      .video::cue {
+        background-color: transparent;
+        color: #fff;
+        font-size: 32px;
+        font-family: 'Lobster', cursive;
+        border: 1px solid red;
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <audio controls crossorigin="true">
@@ -25,6 +35,7 @@
       video.addEventListener('load', function () {
         var tracks = video.textTracks[0];
         tracks.mode = 'showing';
+        console.log('Done');
       });
     </script>
   </body>
