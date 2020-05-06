@@ -8,7 +8,7 @@
   <body>
     <audio controls crossorigin="true">
       <!-- <source src="audio.ogg" type="audio/ogg" /> -->
-      <source src="audio.mp3" type="audio/mpeg" />
+      <source class="video" src="audio.mp3" type="audio/mpeg" />
       <track
         src="subtitles_en.vtt"
         kind="subtitles"
@@ -18,5 +18,14 @@
       />
       Your browser does not support the audio element.
     </audio>
+
+    <script>
+      var video = document.querySelector('video');
+
+      video.addEventListener('load', function () {
+        var tracks = video.textTracks[0];
+        tracks.mode = 'showing';
+      });
+    </script>
   </body>
 </html>
