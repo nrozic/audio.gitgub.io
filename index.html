@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio with subtitles test</title>
+  </head>
+  <body>
+    <audio controls crossorigin="true">
+      <!-- <source src="audio.ogg" type="audio/ogg" /> -->
+      <source src="audio.mp3" type="audio/mpeg" />
+      <track
+        src="subtitles_en.vtt"
+        kind="subtitles"
+        srclang="en"
+        label="English"
+      />
+      Your browser does not support the audio element.
+    </audio>
+  </body>
+</html>
